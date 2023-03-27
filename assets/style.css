@@ -58,7 +58,7 @@ main {
   grid-row: 2 / span 1;
   display: grid;
   grid-template-columns: repeat(9, 1fr);
-  grid-template-rows: repeat(3, 1fr);
+  grid-template-rows: repeat(4, 1fr);
   position: relative;
   box-sizing: border-box;
   align-self: center;
@@ -85,10 +85,6 @@ main {
 }
 
 .nev-img {
-  position: absolute;
-  max-width: inherit;
-  padding: 10px;
-  right: 0px;
   display: none;
 }
 .nev-img img {
@@ -141,7 +137,7 @@ h2 {
 }
 .page-1__price {
   grid-column: 1 / span 3;
-  grid-row: 1 / span 3;
+  grid-row: 1 / span 4;
   align-self: center;
   position: relative;
   height: 366px;
@@ -151,7 +147,7 @@ h2 {
 
 .page-1__house {
   grid-column: 1 / span 3;
-  grid-row: 1 / span 3;
+  grid-row: 1 / span 4;
   align-self: center;
   background-image: url("house.svg");
   background-size: cover;
@@ -219,37 +215,115 @@ input ~ span {
 }
 .page-1__appreciation {
   grid-column: 5 / span 2;
-  grid-row: 1 / span 1;
+  grid-row: 2 / span 1;
   align-self: center;
 }
 .page-1__duration {
   grid-column: 5 / span 2;
-  grid-row: 2 / span 1;
+  grid-row: 3 / span 1;
   align-self: center;
 }
 .page-1__amortisation {
   grid-column: 5 / span 2;
+  grid-row: 4 / span 1;
+  align-self: center;
+}
+
+.page-1__arrow-top {
+  grid-column: 4 / span 1;
+  grid-row: 2 / span 1;
+  background: url("arrow_down_up.svg") no-repeat;
+  background-size: 60%;
+  background-position-y: bottom;
+  background-position-x: center;
+  transform: rotate(11deg);
+}
+
+.page-1__arrow-mid {
+  grid-column: 4 / span 1;
   grid-row: 3 / span 1;
-  align-self: center;
+  background: url("arrow_down_up.svg") no-repeat;
+  background-size: 60%;
+  background-position-y: center;
+  background-position-x: center;
+  transform: rotate(19deg);
 }
-.page-1__value {
+
+.page-1__arrow-bot {
+  grid-column: 4 / span 1;
+  grid-row: 4 / span 1;
+  background: url("arrow_down_up.svg") no-repeat;
+  background-size: 60%;
+  background-position-y: center;
+  background-position-x: center;
+  transform: rotate(27deg);
+}
+
+.page-1__arrow-top2 {
+  grid-column: 7 / span 1;
+  grid-row: 2 / span 1;
+  background: url("arrow_down_up.svg") no-repeat;
+  background-size: 60%;
+  background-position-y: bottom;
+  background-position-x: center;
+  transform: rotate(11deg);
+}
+
+.page-1__arrow-mid2 {
+  grid-column: 7 / span 1;
+  grid-row: 3 / span 1;
+  background: url("arrow_down_up.svg") no-repeat;
+  background-size: 60%;
+  background-position-y: center;
+  background-position-x: center;
+  transform: rotate(19deg);
+}
+
+.page-1__arrow-bot2 {
+  grid-column: 7 / span 1;
+  grid-row: 4 / span 1;
+  background: url("arrow_down_up.svg") no-repeat;
+  background-size: 60%;
+  background-position-y: center;
+  background-position-x: center;
+  transform: rotate(27deg);
+}
+
+.page-1__right {
   grid-column: 8 / span 2;
-  grid-row: 1 / span 1;
-  align-self: center;
-  text-align: right;
+  grid-row: 2 / span 3;
+  background: white;
 }
-.page-1__gain {
-  color: #ff0000;
+
+.page-1__value {
   grid-column: 8 / span 2;
   grid-row: 2 / span 1;
   align-self: center;
-  text-align: right;
+  margin-left: 1em;
+}
+
+.page-1__bezahlt {
+  grid-row: 3/ span 1;
+  grid-column: 8 / span 1;
+  background: url("house.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position-x: center;
+  align-content: end;
+  display: grid;
+}
+
+.page-1__gain {
+  color: #015faa;
+  grid-column: 9 / span 1;
+  grid-row: 3 / span 1;
+  align-self: center;
 }
 .page-1__remainder {
   grid-column: 8 / span 2;
-  grid-row: 3 / span 1;
+  grid-row: 4 / span 1;
   align-self: center;
-  text-align: right;
+  margin-left: 1em;
 }
 .pn-buttons__wrapper {
   background-color: #fff;

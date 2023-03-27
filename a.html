@@ -16,7 +16,7 @@
 
   <body>
     <main>
-      <h1>Jetzt Immobilienwert Ermitteln</h1>
+      <h1>Vermögensaufbau in Immobilien</h1>
       <div class="pn-buttons__wrapper">
         <div class="pn-buttons">
           <button class="pn-button" data-tag="-">
@@ -84,8 +84,11 @@
                       <span class="big-text">€</span>
                     </div>
                   </div>
+                  <div class="page-1__arrow-top"></div>
+                  <div class="page-1__arrow-mid"></div>
+                  <div class="page-1__arrow-bot"></div>
                   <div
-                    class="page-1__appreciation page-1--fade"
+                    class="page-1__appreciation"
                     style="opacity: 1">
                     <label for="valueDevPA">Wertentwicklung p.a.</label>
                     <div class="custom-input">
@@ -100,7 +103,7 @@
                     <span class="big-text">%</span>
                   </div>
                   <div
-                    class="page-1__duration page-1--fade"
+                    class="page-1__duration"
                     style="opacity: 1">
                     <div class="duration-group">
                       <label for="duration">Laufzeit</label>
@@ -117,7 +120,7 @@
                     </div>
                   </div>
                   <div
-                    class="page-1__amortisation page-1--fade"
+                    class="page-1__amortisation"
                     style="opacity: 1">
                     <label for="repaymentPA">Tilgung p.a.</label>
                     <div class="custom-input">
@@ -131,21 +134,32 @@
                     </div>
                     <span class="big-text">%</span>
                   </div>
-                  <div class="page-1__value big-text" id="newValue">
-                    362.272€
+                  <div class="page-1__arrow-top2"></div>
+                  <div class="page-1__arrow-mid2"></div>
+                  <div class="page-1__arrow-bot2"></div>
+                  <div class="page-1__right"></div>
+                  <div class="page-1__value">
+                    <label for="newValue">Wertentwicklung</label>
+                    <div class="big-text" id="newValue">
+                      362.272€
+                    </div>
                   </div>
-                  <div class="page-1__gain big-text" id="assetBuilding">
-                    326.190€
-                  </div>
-                  <div
-                    class="page-1__remainder big-text"
-                    style="position: relative">
-                    <div id="remain">36.082€</div>
+                  <div class="page-1__bezahlt">
                     <div class="nev-img" style="display: none">
                       <img
                         src="assets/immobilie.png"
                         alt="Immobilie bezahlt" />
                     </div>
+                  </div>
+                  <div class="page-1__gain">
+                    <label for="assetBuilding">Wert XY</label>
+                    <div class="big-text" id="assetBuilding">
+                      326.190€
+                    </div>
+                  </div>
+                  <div class="page-1__remainder">
+                    <label for="remain">Tilgung</label>
+                    <div class="big-text" id="remain">36.082€</div>
                   </div>
                 </div>
               </section>
