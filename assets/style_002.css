@@ -1,0 +1,24 @@
+.navbar-dark {
+  background-color: #fff!important;
+}
+.navbar #DM_PROFILE_DIV {
+  color: #000!important;
+}
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+  background-color: #1CA2DC;
+}
+.card-header {
+  background-color: #1CA2DC;
+}
+.loginWRAPPER {
+  background-image:none!important;
+
+  background-color: #E6E6E6!important;
+}
+.loginDIV > div:nth-child(2) {
+  background-image: url(https://compass-re.de/img/slider_1.jpg?1631032622450)!important;
+}
+
+.navbar #DM_PROFILE_IMAGE img, .sidebar .profileDIV img {
+  border-color: #000;
+}

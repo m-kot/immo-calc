@@ -1,0 +1,101 @@
+.dokumesearch-close {
+  display: none;
+}
+.dokume-searchresults {
+  /*border:1px dashed #000;*/
+  display: block;
+  border-top: 0px;
+  position: absolute;
+  z-index: 99999999;
+  background-color: #f9f9f9;
+  box-shadow: 5px 5px 5px 0 rgba(0, 0, 0, 0.26);
+  list-style: none;
+  text-align: left;
+  padding: 0;
+  width: 100%;
+}
+.dokume-searchresults .media {
+  background-color: #fff;
+  margin: 2px 0;
+  padding: 10px 0 10px 20px;
+  color: #000;
+}
+.dokume-searchresults .media h4 {
+  font-size: 1rem;
+}
+.dokume-searchresults .media img {
+  margin-right: 10px;
+  width: 35px;
+  height: 35px;
+  border: 1px solid #e35138;
+  float: left;
+}
+.dokume-searchresults .media:hover {
+  background-color: #e6e6e6;
+  cursor: pointer;
+}
+.dokume-searchresults .search__result--active {
+  background-color: #e6e6e6;
+}
+.dokume-searchresults .tabLink {
+  float: right;
+  margin-right: 5px;
+}
+.dokume-search {
+  width: 100%;
+}
+@media (max-width: 768px) {
+  .dokume-fullscreen {
+    display: block !important;
+    position: fixed;
+    z-index: 999999999;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: #f9f9f9;
+    padding-top: 55px;
+  }
+  .dokume-fullscreen .dokume-searchheader {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 999999999;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 55px;
+    background-color: #323a54;
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.125);
+  }
+  .dokume-fullscreen input {
+    background-color: #e6e6e6;
+    height: 45px;
+    border-radius: 2px;
+    padding: 0 20px;
+  }
+  .dokume-fullscreen .dokumesearch-close {
+    text-align: left;
+    padding: 0;
+    padding-left: 5px;
+
+    display: inline;
+    float: left;
+    width: 10%;
+    max-width: 30px;
+    padding: 10px 0 0 10px;
+  }
+  .dokume-search {
+    margin-right: 5px;
+    margin-left: 15px;
+  }
+  .dokume-searchresults {
+    box-shadow: none;
+  }
+  .card .dokume-search {
+    margin: 0px;
+  }
+}

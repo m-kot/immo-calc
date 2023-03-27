@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+
+    <title>Rechner</title>
+    <link rel="stylesheet" href="assets/style.css" />
+
+    <!-- /build -->
+  </head>
+
+  <body>
+    <main id="DM_MAIN_DIV" role="main" style="position: relative" class="mt-4">
+      <div id="DM_MAIN_CONTENT_WRAPPER" class="marginSidebar">
+        <div id="mainContent">
+          <div id="app" class="my-3">
+            <div class="grid">
+              <div class="main">
+                <h1>Jetzt Immobilienwert Ermitteln</h1>
+
+                <div class="pn-buttons__wrapper">
+                  <div class="pn-buttons">
+                    <button class="pn-button" data-tag="-">
+                      Zurück
+                      <b
+                        ><span class="arrow arrow--flipped"
+                          ><i class="bi bi-arrow-left"></i></span
+                      ></b>
+                    </button>
+                    <button
+                      class="pn-indicator pn-indicator--active"
+                      data-no="1"><i class="bi bi-1-circle">Schritt 1</i></button>
+                    <button class="pn-indicator" data-no="2"><i class="bi bi-2-circle">Schritt 2</i></button>
+                    <button class="pn-indicator" data-no="3"><i class="bi bi-3-circle">Schritt 3</i></button>
+                    <button class="pn-indicator" data-no="4"><i class="bi bi-4-circle">Schritt 4</i></button>
+                    <button class="pn-button pn-button--active" data-tag="+">
+                      <b
+                        ><span class="arrow"
+                          ><i class="bi bi-arrow-right"></i
+                        ></span>
+                      </b>
+                      Weiter
+                    </button>
+                  </div>
+                </div>
+
+                <section class="page-1">
+                  <div class="page-1__grid">
+                    <div class="page-1__price page-1--fade">
+                      <div class="price-group">
+                        <label for="price"
+                          ><em
+                            ><span class="arrow"
+                              ><i class="bi bi-arrow-right"></i></span
+                          ></em>
+                          Kaufpreis</label
+                        >
+                        <div class="custom-input">
+                          <input
+                            id="purchPrice"
+                            type="number"
+                            placeholder="200000"
+                            class="big-text wide-input cal-input"
+                            value="200000"
+                            min="0" />
+                        </div>
+                        <span class="big-text">€</span>
+                      </div>
+                      <div class="capital-group">
+                        <label for="capital"
+                          ><em
+                            ><span class="arrow"
+                              ><i class="bi bi-arrow-right"></i></span
+                          ></em>
+                          Eigenkapital</label
+                        >
+                        <div class="custom-input">
+                          <input
+                            id="equity"
+                            type="number"
+                            placeholder="0"
+                            class="big-text wide-input cal-input"
+                            value="0"
+                            min="0" />
+                        </div>
+                        <span class="big-text">€</span>
+                      </div>
+                    </div>
+                    <div
+                      class="page-1__appreciation page-1--fade"
+                      style="opacity: 1">
+                      <label for="valueDevPA">Wertentwicklung p.a.</label>
+                      <div class="custom-input">
+                        <input
+                          id="valueDevPA"
+                          type="number"
+                          placeholder="2"
+                          class="big-text wide-input cal-input"
+                          value="2"
+                          min="0" />
+                      </div>
+                      <span class="big-text">%</span>
+                    </div>
+                    <div
+                      class="page-1__duration page-1--fade"
+                      style="opacity: 1">
+                      <div class="duration-group">
+                        <label for="duration">Laufzeit</label>
+                        <div class="custom-input">
+                          <input
+                            id="runtime"
+                            placeholder="10"
+                            type="number"
+                            class="big-text wide-input cal-input"
+                            value="30"
+                            min="0" />
+                        </div>
+                        <span class="big-text year-txt">Jahre</span>
+                      </div>
+                    </div>
+                    <div
+                      class="page-1__amortisation page-1--fade"
+                      style="opacity: 1">
+                      <label for="repaymentPA">Tilgung p.a.</label>
+                      <div class="custom-input">
+                        <input
+                          id="repaymentPA"
+                          type="number"
+                          placeholder="2"
+                          class="big-text wide-input cal-input"
+                          value="2"
+                          min="0" />
+                      </div>
+                      <span class="big-text">%</span>
+                    </div>
+                    <div class="page-1__value big-text" id="newValue">
+                      362.272€
+                    </div>
+                    <div class="page-1__gain big-text" id="assetBuilding">
+                      326.190€
+                    </div>
+                    <div
+                      class="page-1__remainder big-text"
+                      style="position: relative">
+                      <div id="remain">36.082€</div>
+                      <div class="nev-img" style="display: none">
+                        <img
+                          src="assets/immobilie.png"
+                          alt="Immobilie bezahlt" />
+                      </div>
+                    </div>
+                  </div>
+                </section>
+                <section
+                  class="page-2"
+                  style="
+                    transition: opacity 0.5s ease 0.5s;
+                    opacity: 1;
+                    display: none;
+                  ">
+                  <h1>Monatlicher Eigenaufwand für Vermögensaufbau</h1>
+                  <div class="page-2__right">
+                    <h2>Aufwendungen (einmalig):</h2>
+                    <div class="page-2__input">
+                      <label for="captial-2">Eigenkapital:</label>
+                      <div class="input-with-unit">
+                        <div class="custom-input">
+                          <input
+                            id="equityCOPY"
+                            type="number"
+                            placeholder="0"
+                            class="cal-input"
+                            value="0"
+                            min="0" />
+                        </div>
+                        <span>€</span>
+                      </div>
+                    </div>
+                    <div class="page-2__input">
+                      <label for="closing-costs">Kaufnebenkosten:</label>
+                      <div class="input-with-unit">
+                        <div class="custom-input">
+                          <input
+                            id="incidentalPurchaseCosts"
+                            value="0"
+                            placeholder="0"
+                            type="number"
+                            class="cal-input"
+                            min="0" />
+                        </div>
+                        <span>€</span>
+                      </div>
+                    </div>
+                    <div class="page-2__input">
+                      <label for="brokerage">Maklergebühr:</label>
+                      <div class="input-with-unit">
+                        <div class="custom-input">
+                          <input
+                            id="markerFee"
+                            value="0"
+                            type="number"
+                            placeholder="0"
+                            class="cal-input"
+                            min="0" />
+                        </div>
+                        <span>€</span>
+                      </div>
+                    </div>
+                    <div class="page-2__input">
+                      <label for="misc">Sonstiges:</label>
+                      <div class="input-with-unit">
+                        <div class="custom-input">
+                          <input
+                            id="otherOnetime"
+                            value="0"
+                            type="number"
+                            placeholder="0"
+                            class="cal-input"
+                            min="0" />
+                        </div>
+                        <span>€</span>
+                      </div>
+                    </div>
+                    <h2 class="mt-8">Aufwendungen (monatlich):</h2>
+                    <div class="page-2__input">
+                      <label for="interest-rate">Zins:</label>
+                      <div class="input-with-unit">
+                        <div class="custom-input">
+                          <input
+                            id="interest"
+                            value="333"
+                            type="number"
+                            placeholder="333"
+                            class="cal-input"
+                            min="0" />
+                        </div>
+                        <span>€</span>
+                      </div>
+                      <div class="input-with-unit">
+                        <div class="custom-input">
+                          <input
+                            id="interestPercent"
+                            value="2"
+                            type="number"
+                            placeholder="2"
+                            class="cal-input"
+                            min="0" />
+                        </div>
+                        <span>%</span>
+                      </div>
+                    </div>
+                    <div class="page-2__input">
+                      <label for="amortisation-rate-2">Tilgung:</label>
+                      <div class="input-with-unit">
+                        <div class="custom-input">
+                          <input
+                            id="repayment"
+                            value="333"
+                            type="number"
+                            placeholder="333"
+                            class="cal-input"
+                            min="0" />
+                        </div>
+                        <span>€</span>
+                      </div>
+                      <div class="input-with-unit">
+                        <div class="custom-input">
+                          <input
+                            id="repaymentPACOPY"
+                            value="2"
+                            type="number"
+                            placeholder="2"
+                            class="cal-input"
+                            min="0" />
+                        </div>
+                        <span>%</span>
+                      </div>
+                    </div>
+                    <div
+                      class="page-2__input"
+                      style="grid-template-columns: 12em 6em 1fr">
+                      <label for="management-rate">Mietverwaltung:</label>
+                      <div class="input-with-unit">
+                        <div class="custom-input">
+                          <input
+                            id="rental_management"
+                            value="30"
+                            type="number"
+                            placeholder="30"
+                            class="cal-input"
+                            min="0" />
+                        </div>
+                        <span>€</span>
+                      </div>
+                    </div>
+                    <div
+                      class="page-2__input"
+                      style="grid-template-columns: 12em 6em 1fr">
+                      <label for="management-rate">Hausverwaltung:</label>
+                      <div class="input-with-unit">
+                        <div class="custom-input">
+                          <input
+                            id="property_management"
+                            value="30"
+                            type="number"
+                            placeholder="30"
+                            class="cal-input"
+                            min="0" />
+                        </div>
+                        <span>€</span>
+                      </div>
+                    </div>
+                    <div
+                      class="page-2__input"
+                      style="grid-template-columns: 12em 6em 1fr">
+                      <label for="management-rate"
+                        >Instandhaltungsrücklage:</label
+                      >
+                      <div class="input-with-unit">
+                        <div class="custom-input">
+                          <input
+                            id="maintenance_reserve"
+                            value="0"
+                            type="number"
+                            placeholder="0"
+                            class="cal-input"
+                            min="0" />
+                        </div>
+                        <span>€</span>
+                      </div>
+                    </div>
+                    <div
+                      class="page-2__input"
+                      style="grid-template-columns: 12em 6em 1fr">
+                      <label for="misc-rate">Sonstiges:</label>
+                      <div class="input-with-unit">
+                        <div class="custom-input">
+                          <input
+                            id="otherMonthly"
+                            value="0"
+                            type="number"
+                            placeholder="0"
+                            class="cal-input"
+                            min="0" />
+                        </div>
+                        <span>€</span>
+                      </div>
+                    </div>
+                    <div class="page-2__sum">
+                      Gesamt: <span id="totalExpenses">726</span>€
+                    </div>
+                    <h2 class="mt-8">Einnahmen (monatlich):</h2>
+                    <div class="page-2__input">
+                      <label for="rent">Miete:</label>
+                      <div class="input-with-unit">
+                        <div class="custom-input">
+                          <input
+                            id="rent"
+                            value="0"
+                            type="number"
+                            placeholder="0"
+                            class="cal-input"
+                            min="0" />
+                        </div>
+                        <span>€</span>
+                      </div>
+                      <div class="input-with-unit">
+                        <div class="custom-input">
+                          <input
+                            id="rentIncrease"
+                            value="0"
+                            type="number"
+                            placeholder="0"
+                            class="cal-input"
+                            min="0" />
+                        </div>
+                        <span>% <small>Steigerung alle 3 Jahre</small></span>
+                      </div>
+                    </div>
+                    <div class="page-2__input">
+                      <label for="tax-benefit">Steuervorteil:</label>
+                      <div class="input-with-unit">
+                        <div class="custom-input">
+                          <input
+                            id="taxAdvantage"
+                            value="0"
+                            type="number"
+                            placeholder="0"
+                            class="cal-input"
+                            min="0" />
+                        </div>
+                        <span>€</span>
+                      </div>
+                    </div>
+                    <div class="page-2__sum">
+                      Gesamt: <span id="totalRevenues">0</span> €
+                    </div>
+                    <div class="page-2__total">
+                      <em class="big-text"
+                        ><span id="ownExpensesMonthly">726</span> €
+                        Eigenaufwand</em
+                      >
+                      für euren Vermögensaufbau
+                    </div>
+                    <div
+                      class="page-2__rent-increase"
+                      id="rentIncreaseDiv"></div>
+                  </div>
+                </section>
+                <section
+                  class="page-3"
+                  style="
+                    transition: opacity 0.5s ease 0s;
+                    opacity: 1;
+                    display: none;
+                  ">
+                  <h1>
+                    Der Fremdkapital-Hebel in
+                    <em class="runtimeCOPY">30</em> Jahren
+                  </h1>
+                  <div class="page-3__right">
+                    <div class="page-3__output">
+                      <span class="text-right">Eigenaufwand</span>
+                      <span
+                        class="big-text text-right"
+                        id="sumOwnExpenses10Years"
+                        >261.360</span
+                      >
+                      <span><span class="big-text">€</span></span>
+                    </div>
+                    <div class="page-3__output">
+                      <span class="text-right">in</span>
+                      <span class="big-text text-right runtimeCOPY">30</span>
+                      <span class="year-txt">Jahre</span>
+                    </div>
+                    <div class="page-3__output">
+                      <span class="text-right">+ Eigenkapital</span>
+                      <span class="big-text text-right" id="equityCOPY2"
+                        >0</span
+                      >
+                      <span class="big-text">€</span>
+                    </div>
+                    <div class="page-3__output">
+                      <span class="text-right">+ Kaufnebenkosten</span>
+                      <span
+                        class="big-text text-right"
+                        id="incidentalPurchaseCostsCOPY"
+                        >0</span
+                      >
+                      <span class="big-text">€</span>
+                    </div>
+                    <div class="page-3__output">
+                      <span class="text-right">+ Maklergebühren</span>
+                      <span class="big-text text-right" id="markerFeeCOPY"
+                        >0</span
+                      >
+                      <span class="big-text">€</span>
+                    </div>
+                    <div class="page-3__output">
+                      <span class="text-right">+ Sonstiges</span>
+                      <span class="big-text text-right" id="otherOnetimeCOPY"
+                        >0</span
+                      >
+                      <span class="big-text">€</span>
+                    </div>
+                    <div class="page-3__output">
+                      <span class="text-right">=</span>
+                      <span class="big-text text-right sumOwnExpenses"
+                        >261.360</span
+                      >
+                      <span class="big-text">€</span>
+                    </div>
+                    <div class="page-3__sum">
+                      <span class="text-right page-3_sum__g1"
+                        >Ergebnis Eigenaufwand</span
+                      >
+                      <span class="big-text text-right page-3_sum__g2"
+                        ><span class="sumOwnExpenses">261.360</span> €</span
+                      >
+                      <em class="text-center page-3_sum__g3"
+                        ><span class="arrow"
+                          ><i class="bi bi-arrow-right"></i
+                        ></span> </em
+                      ><span class="page-3_sum__g4"
+                        >Ergebnis Vermögensaufbau</span
+                      >
+                      <span class="big-text page-3_sum__g5"
+                        ><span class="assetBuildingCOPY">326.190</span> €</span
+                      >
+                    </div>
+                    <div class="page-3__total">
+                      Ergebnis Eigenkapitalrendite<em class="big-text"
+                        ><span id="returnOfEquity">25</span> %</em
+                      >
+                      <em class="big-text" style="font-size: 1.5em; margin: 0px"
+                        ><span id="returnOfEquityMonth">1</span> % p.A.</em
+                      >
+                    </div>
+                  </div>
+                </section>
+                <section
+                  class="page-4"
+                  style="
+                    transition: opacity 0.5s ease 0s;
+                    opacity: 1;
+                    display: none;
+                  ">
+                  <h1>
+                    Der Fremdkapital-Hebel in
+                    <em class="runtimeCOPY">30</em> Jahren
+                  </h1>
+                  <div class="page-4__right">
+                    <h2>Dein Immo-Sparschwein:</h2>
+                    <div
+                      class="piggy__grid"
+                      style="grid-template-columns: 1fr 1fr 1fr">
+                      <div>
+                        <b class="huge-text" style="font-size: 1rem"
+                          ><span class="sumOwnExpensesMonth">726</span> €
+                          p.M.</b
+                        ><br />Eigenanteil
+                      </div>
+                      <div class="text-center">
+                        <b class="huge-text" style="font-size: 1rem"
+                          ><span class="assetBuildingCOPYMonth">906</span> €
+                          p.M.</b
+                        ><br />Vermögenswert
+                      </div>
+                      <div class="text-center">
+                        <b class="huge-text" style="font-size: 1rem"
+                          ><span class="monthlyReturn">24,79</span> % p.M.</b
+                        ><br />Rendite
+                      </div>
+                    </div>
+                    <div class="piggy__grid">
+                      <div>
+                        <b class="huge-text"
+                          ><span class="sumOwnExpenses">261.360</span> €</b
+                        ><br />Eigenanteil
+                      </div>
+                      <div class="text-center">
+                        <b class="huge-text"
+                          ><span class="sumOwnRevenues">64.830</span> €</b
+                        ><br />Mieteinnahmen, Wertzuwachs, Steuervorteile!
+                      </div>
+                    </div>
+                    <p class="relative">
+                      <img
+                        src="assets/house.png"
+                        alt="Immo-Sparschwein"
+                        class="w-full h-auto page-4__piggybank" />
+                      <em class="piggy__text"
+                        ><span class="assetBuildingCOPY">326.190</span> €</em
+                      >
+                      <span class="piggy__text__label">Vermögenswert</span>
+                      <span class="nev-img-1" style="display: none"
+                        ><img
+                          src="assets/immobilie.png"
+                          alt="Immobilie bezahlt"
+                      /></span>
+                    </p>
+                    <div>
+                      <input
+                        type="range"
+                        min="1"
+                        max="120"
+                        value="30"
+                        class="slider"
+                        id="year-reanger" />
+                      <div class="piggy__slider__label">
+                        <em class="runtimeCOPY">30</em>
+                        <span class="year-txt">Jahre</span>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script
+      src="https://code.jquery.com/jquery-3.6.4.min.js"
+      integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8="
+      crossorigin="anonymous"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous" />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+      crossorigin="anonymous"></script>
+
+    <script src="assets/calculator.js"></script>
+
+    <!---------Plugins--------->
+    <script src="assets/flatpickr.min.js"></script>
+    <script src="assets/lottie.min.js"></script>
+    <script src="assets/de.js"></script>
+    <script src="assets/lazyload.min.js"></script>
+    <script src="assets/moment-with-locales.js"></script>
+    <script src="assets/jquery.reject.js"></script>
+    <!---------Plugins--------->
+  </body>
+</html>
