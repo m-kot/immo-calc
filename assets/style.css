@@ -9,6 +9,7 @@ main {
   display: grid;
   column-gap: 2em;
   row-gap: 2em;
+  grid-template-columns: repeat(2, 1fr);
 }
 
 .schritt {
@@ -72,6 +73,8 @@ main {
 .page-2__grid {
   grid-row: 2 / span 1;
   display: grid;
+  gap: 1em;
+  grid-template-columns: repeat(4, 1fr);
 }
 
 .grid section.page-3 {
@@ -191,10 +194,6 @@ input {
 .big-text {
   font-size: 1.2rem;
   font-weight: 400;
-}
-.custom-input ~ span,
-input ~ span {
-  margin-left: 0.5em;
 }
 /* .page-1-trans {
   opacity: 1;
@@ -382,39 +381,141 @@ input ~ span {
   color: #ff0000;
 }
 
+.page-2__grid label {
+  display: block;
+}
+
+.page-2__einmalige {
+  grid-row: 1 / span 1;
+  grid-column: 1 / span 4;
+  color:#015faa;
+}
+
 .page-2__input {
   display: grid;
-  grid-template-columns: 8em 6em 1fr;
+  grid-template-columns: repeat(2, 1fr);
   align-items: center;
   gap: 1em;
 }
-.page-2__input label {
-  text-align: right;
+
+.page-2__eigencapital {
+  grid-row: 2 / span 1;
+  grid-column: 1 / span 2;
 }
-.input-with-unit {
-  display: grid;
-  grid-template-columns: 5rem max-content;
-  align-items: center;
+
+.page-2__kaufnebenkosten {
+  grid-row: 2 / span 1;
+  grid-column: 3 / span 2;
 }
-.page-2__input .custom-input,
-.page-2__input input {
-  min-width: 5em;
-  max-width: 100%;
-  box-sizing: border-box;
+
+.page-2__maklergebuhr {
+  grid-row: 3 / span 1;
+  grid-column: 1 / span 2;
 }
-.page-2__input + .page-2__input {
-  margin-top: 0.25em;
+
+.page-2__sonstiges {
+  grid-row: 3 / span 1;
+  grid-column: 3 / span 2;
 }
-.mt-8 {
-  margin-top: 2rem;
+
+.page-2__monatliche {
+  grid-row: 4 / span 1;
+  grid-column: 1 / span 4;
+  color: #015faa;
 }
+
+.page-2__zins {
+  grid-row: 5 / span 1;
+  grid-column: 1 / span 1;
+}
+
+.page-2__zins_pp {
+  grid-row: 5 / span 1;
+  grid-column: 2 / span 1;
+  align-self: end;
+}
+
+.page-2__tilgung {
+  grid-row: 5 / span 1;
+  grid-column: 3 / span 1;
+}
+
+.page-2__tilgung_pp {
+  grid-row: 5 / span 1;
+  grid-column: 4 / span 1;
+  align-self: end;
+}
+
+.page-2__mietverwaltung {
+  grid-row: 6 / span 1;
+  grid-column: 1 / span 2;
+}
+
+.page-2__hausverwaltung {
+  grid-row: 6 / span 1;
+  grid-column: 3 / span 2;
+}
+
+.page-2__instandhaltungsrucklage {
+  grid-row: 7 / span 1;
+  grid-column: 1 / span 2;
+}
+
+.page-2__sonstiges2 {
+  grid-row: 7 / span 1;
+  grid-column: 3 / span 2;
+}
+
+.page-2__monatliche2 {
+  grid-row: 8 / span 1;
+  grid-column: 1 / span 4;
+  color: #015faa;
+}
+
+.page-2__miete {
+  grid-row: 9 / span 1;
+  grid-column: 1 / span 2;
+}
+
+.page-2__steigerung {
+  grid-row: 9 / span 1;
+  grid-column: 3 / span 2;
+}
+
+.page-2__steuervorteil {
+  grid-row: 10 / span 1;
+  grid-column: 1 / span 2;
+}
+
+.page-2__total {
+  grid-row: 11 / span 1;
+  grid-column: 1 / span 4;
+}
+
+.page-2__grid .custom-input, .page-2__grid .short-input {
+  display: inline;
+}
+.page-2__grid .custom-input input {
+  width: 90%;
+}
+
+.page-2__grid .short-input input {
+  width: 80%;
+}
+
 .page-2__sum {
+  display: none;
   font-weight: 700;
   border-top: 1px solid #ff0000;
   margin-top: 1em;
   padding-top: 1em;
   text-align: center;
 }
+
+.page-2__input label {
+  text-align: right;
+}
+
 .page-2__total {
   font-weight: 700;
   text-align: center;

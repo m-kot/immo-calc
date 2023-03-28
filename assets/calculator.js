@@ -118,7 +118,7 @@
             .concat(3 * (m + 1), "</b> Jahren: <b>")
             .concat(
               moneyFormatter.format(rentIncreaseDivNum),
-              " â‚¬</b></span>"
+              " €</b></span>"
             );
         }
         el("rentIncreaseDiv").innerHTML = rentIncreaseDivHtml;
