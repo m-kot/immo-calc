@@ -283,10 +283,8 @@
         "pn-indicator--active"
       ),
       1 == pageNo
-        ? ($(".page-1").removeClass("page-1-trans"),
-          $('.pn-button[data-tag="-"]').removeClass("pn-button--active"))
-        : ($(".page-1").addClass("page-1-trans"),
-          $(".page-" + pageNo).show(),
+        ? ($('.pn-button[data-tag="-"]').removeClass("pn-button--active"))
+        : ($(".page-" + pageNo).show(),
           4 == pageNo &&
             $('.pn-button[data-tag="+"]').removeClass("pn-button--active"));
   }
