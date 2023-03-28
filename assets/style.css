@@ -165,7 +165,7 @@ h2 {
   grid-column: 1 / span 3;
   grid-row: 1 / span 4;
   align-self: center;
-  background-image: url("house.svg");
+  background-image: url("house_grey.svg");
   background-size: cover;
   height: 366px;
 }
@@ -245,19 +245,19 @@ input {
   grid-row: 2 / span 1;
   background: url("arrow_down_up.svg") no-repeat;
   background-size: 60%;
-  background-position-y: bottom;
+  background-position-y: top;
   background-position-x: center;
-  transform: rotate(11deg);
+  -webkit-transform: scaleY(-1) rotate(30deg);
+  transform: scaleY(-1) rotate(30deg);
 }
 
 .page-1__arrow-mid {
   grid-column: 4 / span 1;
   grid-row: 3 / span 1;
-  background: url("arrow_down_up.svg") no-repeat;
+  background: url("arrow_blue.svg") no-repeat;
   background-size: 60%;
-  background-position-y: center;
+  background-position-y: 70%;
   background-position-x: center;
-  transform: rotate(19deg);
 }
 
 .page-1__arrow-bot {
@@ -273,31 +273,29 @@ input {
 .page-1__arrow-top2 {
   grid-column: 7 / span 1;
   grid-row: 2 / span 1;
-  background: url("arrow_down_up.svg") no-repeat;
+  background: url("line_grey.svg") no-repeat;
   background-size: 60%;
-  background-position-y: bottom;
+  background-position-y: center;
   background-position-x: center;
-  transform: rotate(11deg);
 }
 
 .page-1__arrow-mid2 {
   grid-column: 7 / span 1;
   grid-row: 3 / span 1;
-  background: url("arrow_down_up.svg") no-repeat;
+  background: url("line_blue.svg") no-repeat;
   background-size: 60%;
   background-position-y: center;
   background-position-x: center;
-  transform: rotate(19deg);
 }
 
 .page-1__arrow-bot2 {
   grid-column: 7 / span 1;
   grid-row: 4 / span 1;
-  background: url("arrow_down_up.svg") no-repeat;
+  background: url("line_grey.svg") no-repeat;
   background-size: 60%;
   background-position-y: center;
   background-position-x: center;
-  transform: rotate(27deg);
+
 }
 
 .page-1__right {
@@ -316,11 +314,11 @@ input {
 .page-1__bezahlt {
   grid-row: 3/ span 1;
   grid-column: 8 / span 1;
-  background: url("house.svg");
+  background: url("house_blue.svg");
   background-size: contain;
   background-repeat: no-repeat;
   background-position-x: center;
-  align-content: end;
+  align-content: center;
   display: grid;
 }
 
@@ -579,6 +577,11 @@ input {
 .page-3_sum__g3 {
   grid-column: 2;
   grid-row: 1 / span 2;
+  width: 100px;
+  height: 100%;
+  background: url("arrow_blue.svg") no-repeat;
+  background-position-y: center;
+  background-position-x: center;
 }
 .page-3_sum__g4 {
   grid-column: 3;
