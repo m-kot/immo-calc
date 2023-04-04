@@ -274,20 +274,43 @@
     return el;
   }
   function slidePage() {
-    $(".page-2").hide(),
-      $(".page-3").hide(),
-      $(".page-4").hide(),
-      $(".pn-button").addClass("pn-button--active"),
-      $(".pn-indicator").removeClass("pn-indicator--active"),
-      $('.pn-indicator[data-no="'.concat(pageNo, '"]')).addClass(
-        "pn-indicator--active"
-      ),
-      1 == pageNo
-        ? ($('.pn-button[data-tag="-"]').removeClass("pn-button--active"))
-        : ($(".page-" + pageNo).show(),
-          4 == pageNo &&
-            $('.pn-button[data-tag="+"]').removeClass("pn-button--active"));
-  }
+      switch(pageNo) {
+        case 1:
+          $(".page-2").hide(), 
+          $(".page-3").hide(),
+          $(".page-4").hide()
+          break
+        case 2:
+          $(".page-2").show(),
+          $(".page-3").hide(),
+          $(".page-4").hide()
+          break
+        case 3:
+          $(".page-2").show(),
+          $(".page-3").show(),
+          $(".page-4").hide()
+          break
+        case 4:
+          $(".page-2").show(),
+          $(".page-3").show(),
+          $(".page-4").show()
+      }
+    }
+  
+  //               $(".page-2").show(),
+  //               $(".page-3").show(),
+  //               $(".page-4").hide())
+  //               : (
+  //                 $(".page-4").show()) :
+  //   $(".pn-button").addClass("pn-button--active"),
+  //   $(".pn-indicator").removeClass("pn-indicator--active"),
+  //   $('.pn-indicator[data-no="'.concat(pageNo, '"]')).addClass("pn-indicator--active"),
+  //   1 == pageNo 
+  //     ? 
+  //     ($('.pn-button[data-tag="-"]').removeClass("pn-button--active"))
+  //     : ($(".page-" + pageNo).show(),
+  //   4 == pageNo && $('.pn-button[data-tag="+"]').removeClass("pn-button--active"));
+  // }
   function initCanvas() {
     var _r,
       _i,

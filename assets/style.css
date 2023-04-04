@@ -1,7 +1,11 @@
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css");
 
 .pn-buttons__wrapper {
-  display: none !important;
+  display: inherit;
+}
+
+.bi-plus-circle-fill {
+  color: #015faa;
 }
 
 main {
@@ -90,7 +94,7 @@ main {
 }
 
 .grid section.page-3 {
-  grid-row: 2 / span 2;
+  grid-row: 2 / span 1;
   grid-column: 2 / span 1;
 }
 
@@ -497,9 +501,43 @@ input {
   grid-column: 1 / span 2;
 }
 
-.page-2__total {
-  grid-row: 1 / span 1;
-  grid-column: 4 / span 1;
+.page-2__total, .page-3__total {
+  display: grid;
+  column-gap: 2em;
+  grid-template-columns: auto min-content;
+  background: #fff;
+  color: #015faa;
+  grid-row: 12 / span 1;
+  grid-column: 1 / span 4;
+  text-align: right;
+  justify-content: right;
+}
+
+.page-3__total {
+  grid-row: 9 / span 1;
+  grid-column: 1 / span 1;
+}
+
+.page-3__rendite {
+  background: url('step3_rendite.svg') no-repeat;
+  background-size: cover;
+  height: auto;
+  width: 80px;
+  background-position: center;
+}
+
+.page-2__aufwand {
+  grid-row: 1 / span 3;
+  grid-column: 1;
+  height: 100%;
+  width: 100px;
+  background: url('step2_aufwand.svg') no-repeat;
+  background-size: cover;
+  background-position-x: center;
+}
+
+.page-2__aufwand2 {
+  padding: 1em;
 }
 
 .page-2__rent-increase {
@@ -536,11 +574,7 @@ input {
   text-align: right;
 }
 
-.page-2__total {
-  text-align: center;
-  color: #fff;
-}
-.page-2__total span {
+.page-2__total span, .page-3__total .big-text {
   font-size: 2em;
   font-weight: 600;
 }
@@ -593,10 +627,9 @@ input {
 }
 .page-3__total {
   text-align: right;
+  padding: 1em;
 }
-.page-3__total .big-text {
-  font-size: 2.5em;
-}
+
 .page-3__total em {
   display: block;
 }

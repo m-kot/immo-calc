@@ -17,7 +17,9 @@
 
   <body>
     <main>
-      <h1 style="padding-top: 1em; padding-bottom: 1em; color: #015faa;"><span style="color: #3ec699;">|</span> Vermögensaufbau in Immobilien</h1>
+      <h1 style="padding-top: 1em; padding-bottom: 1em; color: #015faa">
+        <span style="color: #3ec699">|</span> Vermögensaufbau in Immobilien
+      </h1>
       <div class="pn-buttons__wrapper">
         <div class="pn-buttons">
           <button class="pn-button" data-tag="-">
@@ -52,7 +54,7 @@
           <div class="schritt">
             <i class="bi bi-1-circle-fill"></i>
             <span class="schritt-number">Schritt 1</span>
-            <span class="schritt-title">Vermogensaufbau mit Immobillien</span>
+            <span class="schritt-title">Vermögensaufbau mit Immobillien</span>
           </div>
           <div class="page-1__grid">
             <div class="page-1__house"></div>
@@ -160,7 +162,7 @@
           <div class="schritt">
             <i class="bi bi-2-circle-fill"></i>
             <span class="schritt-number">Schritt 2</span>
-            <span class="schritt-title">Vermogensaufbau mit Immobillien</span>
+            <span class="schritt-title">Vermögensaufbau mit Immobillien</span>
           </div>
           <div class="page-2__grid">
             <div class="page-2__einmalige">einmalige Aufwendungen</div>
@@ -383,13 +385,15 @@
               Gesamt: <span id="totalRevenues">0</span> €
             </div>
             <div class="page-2__rent-increase" id="rentIncreaseDiv"></div>
-          </div>
-        </section>
-        <section class="page-2-sum">
-          <div class="page-2__total">
-            <label for="ownExpensesMonthly">Eigenaufwand</label>
-            <span id="ownExpensesMonthly" class="bix-text">726</span
-            ><span class="big-text">€</span>
+            <div class="page-2__total">
+              <div class="page-2__aufwand"></div>
+              <div class="page-2__aufwand2">
+                <label for="ownExpensesMonthly">Eigenaufwand</label>
+                <span id="ownExpensesMonthly" class="bix-text">726</span>
+                <span class="big-text">€</span>
+                <em style="color: #000">Vermögensaufbau</em>
+              </div>
+            </div>
           </div>
         </section>
         <section class="page-3">
@@ -401,65 +405,59 @@
           <div class="page-3__grid">
             <div class="page-3__eigenkapitalrendite">Eigenkapitalrendite</div>
             <div class="page-3__output">
-              <span >Eigenaufwand</span>
+              <span>Eigenaufwand</span>
               <span class="big-text text-right" id="sumOwnExpenses10Years"
                 >261.360</span
               >
               <span><span class="big-text">€</span></span>
             </div>
             <div class="page-3__output">
-              <span >in</span>
+              <span>in</span>
               <span class="big-text text-right runtimeCOPY">30</span>
               <span class="year-txt">Jahre</span>
             </div>
             <div class="page-3__output">
-              <span >+ Eigenkapital</span>
+              <span><i class="bi bi-plus-circle-fill"></i> Eigenkapital</span>
               <span class="big-text text-right" id="equityCOPY2">0</span>
               <span class="big-text">€</span>
             </div>
             <div class="page-3__output">
-              <span >+ Kaufnebenkosten</span>
+              <span
+                ><i class="bi bi-plus-circle-fill"></i> Kaufnebenkosten</span
+              >
               <span class="big-text text-right" id="incidentalPurchaseCostsCOPY"
                 >0</span
               >
               <span class="big-text">€</span>
             </div>
             <div class="page-3__output">
-              <span >+ Maklergebühren</span>
+              <span><i class="bi bi-plus-circle-fill"></i> Maklergebühren</span>
               <span class="big-text text-right" id="markerFeeCOPY">0</span>
               <span class="big-text">€</span>
             </div>
             <div class="page-3__output">
-              <span >+ Sonstiges</span>
+              <span><i class="bi bi-plus-circle-fill"></i> Sonstiges</span>
               <span class="big-text text-right" id="otherOnetimeCOPY">0</span>
               <span class="big-text">€</span>
             </div>
-            <div class="page-3__output">
-              <span >=</span>
-              <span class="big-text text-right sumOwnExpenses">261.360</span>
-              <span class="big-text">€</span>
-            </div>
             <div class="page-3__sum">
-              <span class="page-3_sum__g1"
-                >Eigenaufwand</span
-              >
+              <span class="page-3_sum__g1">Eigenaufwand</span>
               <span class="big-text page-3_sum__g2"
                 ><span class="sumOwnExpenses">261.360</span> €</span
               >
-              <span class="text-center page-3_sum__g3"
-                ></span
+              <span class="text-center page-3_sum__g3"></span
               ><span class="text-right page-3_sum__g4">Vermögensaufbau</span>
               <span class="text-right big-text page-3_sum__g5"
                 ><span class="assetBuildingCOPY">326.190</span> €</span
               >
             </div>
             <div class="page-3__total">
-              Eigenkapitalrendite<em class="big-text"
-                ><span id="returnOfEquity">25</span> %</em
-              >
-              <em class="big-text" style="font-size: 1.5em; margin: 0px"
-                ><span id="returnOfEquityMonth">1</span> % p.A.</em
-              >
+              <div class="page-3__rendite"></div>
+              <div class="page-3__total2">
+                Eigenkapitalrendite
+                <em class="big-text"><span id="returnOfEquity">25</span> %</em>
+                <em style="color: #000"><span id="returnOfEquityMonth">1</span> % p.A.</em>
+              </div>
             </div>
           </div>
         </section>
