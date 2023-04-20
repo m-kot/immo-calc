@@ -274,26 +274,21 @@
     return el;
   }
   function slidePage() {
+    $(".pn-indicator").removeClass("pn-indicator--active"),
+    $('.pn-indicator[data-no="'.concat(pageNo, '"]')).addClass("pn-indicator--active")
       switch(pageNo) {
         case 1:
           $(".page-2").hide(), 
-          $(".page-3").hide(),
-          $(".page-4").hide()
+          $(".page-3").hide()
           break
         case 2:
           $(".page-2").show(),
-          $(".page-3").hide(),
-          $(".page-4").hide()
+          $(".page-3").hide()
           break
         case 3:
           $(".page-2").show(),
-          $(".page-3").show(),
-          $(".page-4").hide()
+          $(".page-3").show()
           break
-        case 4:
-          $(".page-2").show(),
-          $(".page-3").show(),
-          $(".page-4").show()
       }
     }
   

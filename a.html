@@ -38,9 +38,6 @@
           <button class="pn-indicator" data-no="3">
             <i class="bi bi-3-circle">Schritt 3</i>
           </button>
-          <button class="pn-indicator" data-no="4">
-            <i class="bi bi-4-circle">Schritt 4</i>
-          </button>
           <button class="pn-button pn-button--active" data-tag="+">
             <b
               ><span class="arrow"><i class="bi bi-arrow-right"></i></span>
@@ -158,7 +155,7 @@
             </div>
           </div>
         </section>
-        <section class="page-2">
+        <section class="page-2" style="display: none;">
           <div class="schritt">
             <i class="bi bi-2-circle-fill"></i>
             <span class="schritt-number">Schritt 2</span>
@@ -396,7 +393,7 @@
             </div>
           </div>
         </section>
-        <section class="page-3">
+        <section class="page-3" style="display: none;">
           <div class="schritt">
             <i class="bi bi-3-circle-fill"></i>
             <span class="schritt-number">Schritt 3</span>
@@ -442,14 +439,14 @@
             </div>
             <div class="page-3__sum">
               <span class="page-3_sum__g1">Eigenaufwand</span>
-              <span class="big-text page-3_sum__g2"
-                ><span class="sumOwnExpenses">261.360</span> €</span
-              >
-              <span class="text-center page-3_sum__g3"></span
-              ><span class="text-right page-3_sum__g4">Vermögensaufbau</span>
-              <span class="text-right big-text page-3_sum__g5"
-                ><span class="assetBuildingCOPY">326.190</span> €</span
-              >
+              <span class="big-text page-3_sum__g2">
+                <span class="sumOwnExpenses">261.360</span> €
+              </span>
+              <span class="text-center page-3_sum__g3"></span>
+              <span class="text-right page-3_sum__g4">Vermögensaufbau</span>
+              <span class="text-right big-text page-3_sum__g5">
+                <span class="assetBuildingCOPY">326.190</span> €
+              </span>
             </div>
             <div class="page-3__total">
               <div class="page-3__rendite"></div>
@@ -459,73 +456,49 @@
                 <em style="color: #000"><span id="returnOfEquityMonth">1</span> % p.A.</em>
               </div>
             </div>
-          </div>
-        </section>
-        <section
-          class="page-4"
-          style="transition: opacity 0.5s ease 0s; opacity: 1; display: none"
-        >
-          <h1>
-            Der Fremdkapital-Hebel in
-            <em class="runtimeCOPY">30</em> Jahren
-          </h1>
-          <div class="page-4__right">
-            <h2>Dein Immo-Sparschwein:</h2>
-            <div class="piggy__grid" style="grid-template-columns: 1fr 1fr 1fr">
-              <div>
-                <b class="huge-text" style="font-size: 1rem"
-                  ><span class="sumOwnExpensesMonth">726</span> € p.M.</b
-                ><br />Eigenanteil
-              </div>
-              <div class="text-center">
-                <b class="huge-text" style="font-size: 1rem"
-                  ><span class="assetBuildingCOPYMonth">906</span> € p.M.</b
-                ><br />Vermögenswert
-              </div>
-              <div class="text-center">
-                <b class="huge-text" style="font-size: 1rem"
-                  ><span class="monthlyReturn">24,79</span> % p.M.</b
-                ><br />Rendite
-              </div>
+            <div class="page-3__sparschwein">Dein Immobilien Sparschwein</div>
+            <div class="page-3__output">
+              <span>Eigenanteil</span>
+              <span class="big-text text-right sumOwnExpensesMonth">726</span>
+              <span class="big-text">€ p.M.</span>
             </div>
-            <div class="piggy__grid">
-              <div>
-                <b class="huge-text"
-                  ><span class="sumOwnExpenses">261.360</span> €</b
-                ><br />Eigenanteil
-              </div>
-              <div class="text-center">
-                <b class="huge-text"
-                  ><span class="sumOwnRevenues">64.830</span> €</b
-                ><br />Mieteinnahmen, Wertzuwachs, Steuervorteile!
-              </div>
+            <div class="page-3__output">
+              <span>Vermögenswert</span>
+              <span class="big-text text-right assetBuildingCOPYMonth">906</span>
+              <span class="big-text">€ p.M.</span>
             </div>
-            <p class="relative">
-              <img
-                src="assets/house.png"
-                alt="Immo-Sparschwein"
-                class="w-full h-auto page-4__piggybank"
-              />
-              <em class="piggy__text"
-                ><span class="assetBuildingCOPY">326.190</span> €</em
-              >
-              <span class="piggy__text__label">Vermögenswert</span>
-              <span class="nev-img-1" style="display: none"
-                ><img src="assets/immobilie.png" alt="Immobilie bezahlt"
-              /></span>
-            </p>
-            <div>
-              <input
+            <div class="page-3__output">
+              <span>Rendite</span>
+              <span class="big-text text-right monthlyReturn">0</span>
+              <span class="big-text">€ p.M.</span>
+            </div>
+            <div class="page-3__sum">
+              <span class="page-3_sum__g1">Eigenanteil</span>
+              <span class="big-text page-3_sum__g2">
+                <span class="sumOwnExpenses">261.360</span> €
+              </span>
+              <span class="text-right page-3_sum__g4">Mieteinnahmen</span>
+              <span class="text-right big-text page-3_sum__g5">
+                <span class="sumOwnRevenues">326.190</span> €
+              </span>
+            </div>
+            <div class="page-4__total">
+              <div class="page-4__ranger">
+                <em class="big-text runtimeCOPY">30</em>
+                <span class="year-txt">Jahre</span>
+                <input
                 type="range"
                 min="1"
-                max="120"
+                max="80"
                 value="30"
                 class="slider"
                 id="year-reanger"
               />
-              <div class="piggy__slider__label">
-                <em class="runtimeCOPY">30</em>
-                <span class="year-txt">Jahre</span>
+              </div>
+              <div class="page-4__piggy"></div>
+              <div class="page-4__total2">
+                Vermögenswert
+                <em class="big-text"><span class="assetBuildingCOPY">25</span> €</em>
               </div>
             </div>
           </div>

@@ -90,6 +90,7 @@ main {
   grid-row: 2 / span 1;
   display: grid;
   gap: 1em;
+  row-gap: 2em;
   grid-template-columns: repeat(4, 1fr);
 }
 
@@ -501,7 +502,7 @@ input {
   grid-column: 1 / span 2;
 }
 
-.page-2__total, .page-3__total {
+.page-2__total, .page-3__total, .page-4__total {
   display: grid;
   column-gap: 2em;
   grid-template-columns: auto min-content;
@@ -518,8 +519,33 @@ input {
   grid-column: 1 / span 1;
 }
 
+
+.page-4__total {
+  grid-row: 15 / span 1;
+  grid-column: 1 / span 1;
+  grid-template-columns: 1fr auto 1fr;
+  text-align: center;
+}
+
+.page-4__ranger {
+  display: grid;
+  text-align: center;
+}
+
+.year-txt {
+  align-self: center;
+}
+
 .page-3__rendite {
   background: url('step3_rendite.svg') no-repeat;
+  background-size: cover;
+  height: auto;
+  width: 80px;
+  background-position: center;
+}
+
+.page-4__piggy {
+  background: url('step3_vermoegen.svg') no-repeat;
   background-size: cover;
   height: auto;
   width: 80px;
@@ -574,7 +600,7 @@ input {
   text-align: right;
 }
 
-.page-2__total span, .page-3__total .big-text {
+.page-2__total span, .page-3__total .big-text, .page-4__total .big-text {
   font-size: 2em;
   font-weight: 600;
 }
@@ -625,17 +651,21 @@ input {
   grid-column: 3;
   grid-row: 2;
 }
-.page-3__total {
+.page-3__total, .page-4__total {
   text-align: right;
   padding: 1em;
 }
 
-.page-3__total em {
+.page-3__total em, .page-4__total em {
   display: block;
+}
+
+.page-3__sparschwein {
+  color: #015faa;
+
 }
 .page-4 {
   display: grid;
-  grid-template-columns: 6fr 4fr;
 }
 .page-4__right {
   align-self: center;
@@ -755,6 +785,8 @@ input {
   -webkit-transition: 0.2s;
   transition: opacity 0.2s;
   padding: 0px;
+  grid-row: 2;
+  grid-column: 1 / span 2;
 }
 
 .slider:hover {
@@ -777,4 +809,8 @@ input {
   border-radius: 50%;
   background: #ff0000;
   cursor: pointer;
+}
+
+.page-2, .page-3 {
+  display: none;
 }
