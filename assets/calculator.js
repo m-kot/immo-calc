@@ -278,15 +278,18 @@
     $('.pn-indicator[data-no="'.concat(pageNo, '"]')).addClass("pn-indicator--active")
       switch(pageNo) {
         case 1:
+          $(".page-1").removeClass("animate");
           $(".page-2").hide(), 
           $(".page-3").hide()
           break
         case 2:
+          $(".page-1").addClass("animate");
           $(".page-2").show(),
           $(".page-3").hide()
           break
         case 3:
-          $(".page-2").show(),
+          $(".page-1").addClass("animate");          
+          $(".page-2").hide(),
           $(".page-3").show()
           break
       }
