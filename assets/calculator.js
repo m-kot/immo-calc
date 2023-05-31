@@ -170,7 +170,7 @@
           (el("year-reanger").value = runtime),
           1 == parseInt(runtime)
             ? $(".year-txt").html("Jahr")
-            : $(".year-txt").html("Jahre");
+            : $(".year-txt").html("Jahren");
         (el("equityCOPY2").innerHTML = moneyFormatter.format(equity)),
           (el("incidentalPurchaseCostsCOPY").innerHTML = moneyFormatter.format(
             incidentalPurchaseCosts
